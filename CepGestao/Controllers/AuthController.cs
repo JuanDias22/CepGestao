@@ -35,9 +35,14 @@ namespace CepGestao.Controllers
 
             HttpContext.Session.SetInt32("UsuarioId", usuario.Id);
 
-            var usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+            return RedirectToAction("Index", "Endereco");
+        }
 
-            return Content($"Usuário logado: {usuarioId}");
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+
+            return RedirectToAction("Login");
         }
     }
 }
