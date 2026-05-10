@@ -87,11 +87,11 @@ namespace CepGestao.Controllers
             if (endereco == null)
             {
                 return NotFound();
-        }
+            }
 
             return View(endereco);
         }
-       
+
         [HttpPost]
         public IActionResult DeleteConfirmed(int id)
         {
