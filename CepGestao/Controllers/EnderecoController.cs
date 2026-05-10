@@ -56,6 +56,42 @@ namespace CepGestao.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var endereco = _context.Enderecos.FirstOrDefault(x => x.Id == id);
+
+            if (endereco == null)
+            {
+                return NotFound();
+            }
+
+            return View(endereco);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Endereco endereco)
+        {
+            _context.Enderecos.Update(endereco);
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var endereco = _context.Enderecos
+                .FirstOrDefault(x => x.Id == id);
+
+            if (endereco == null)
+            {
+                return NotFound();
+        }
+
+            return View(endereco);
+        }
        
+        }
     }
 }

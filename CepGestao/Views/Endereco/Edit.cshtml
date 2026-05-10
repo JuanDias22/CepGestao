@@ -1,1 +1,51 @@
-﻿
+﻿@model CepGestao.Models.Endereco
+
+<h2>Editar Endereço</h2>
+
+<form method="post">
+
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="hidden" name="UsuarioId" value="@Model.UsuarioId" />
+
+    <div>
+        <label>CEP</label>
+        <input type="text" name="Cep" value="@Model.Cep" />
+    </div>
+
+    <div>
+        <label>Logradouro</label>
+        <input type="text" name="Logradouro" value="@Model.Logradouro" />
+    </div>
+
+    <div>
+        <label>Complemento</label>
+        <input type="text" name="Complemento" value="@Model.Complemento" />
+    </div>
+
+    <div>
+        <label>Bairro</label>
+        <input type="text" name="Bairro" value="@Model.Bairro" />
+    </div>
+
+    <div>
+        <label>Cidade</label>
+        <input type="text" name="Cidade" value="@Model.Cidade" />
+    </div>
+
+    <div>
+        <label>UF</label>
+        <input type="text" name="Uf" value="@Model.Uf" />
+    </div>
+
+    <div>
+        <label>Número</label>
+        <input type="text" name="Numero" value="@Model.Numero" />
+    </div>
+
+    <br />
+
+    <button type="submit">
+        Salvar Alterações
+    </button>
+
+</form>
