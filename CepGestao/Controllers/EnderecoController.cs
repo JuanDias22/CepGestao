@@ -3,6 +3,7 @@ using CepGestao.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Text;
 
 namespace CepGestao.Controllers
 {
@@ -109,6 +110,43 @@ namespace CepGestao.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult ExportarCsv()
+        {
+            var usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+
+            if (usuarioId == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
+
+            var enderecos = _context.Enderecos
+                .Where(x => x.UsuarioId == usuarioId.Value)
+                .ToList();
+
+            var csv = new StringBuilder();
+
+            csv.AppendLine("CEP,Logradouro,Complemento,Bairro,Cidade,UF,Número");
+
+            foreach (var endereco in enderecos)
+            {
+                csv.AppendLine(
+                    $"{endereco.Cep}," +
+                    $"{endereco.Logradouro}," +
+                    $"{endereco.Complemento}," +
+                    $"{endereco.Bairro}," +
+                    $"{endereco.Cidade}," +
+                    $"{endereco.Uf}," +
+                    $"{endereco.Numero}"
+                );
+            }
+
+            return File(
+                Encoding.UTF8.GetBytes(csv.ToString()),
+                "text/csv",
+                "enderecos.csv"
+            );
+        }   
 
     }
 }
