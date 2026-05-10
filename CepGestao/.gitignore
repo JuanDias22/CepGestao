@@ -1,0 +1,7 @@
+﻿
+---
+
+```gitignore id="jlwmil"
+bin/
+obj/
+.vs/
