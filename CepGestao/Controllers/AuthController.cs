@@ -26,7 +26,7 @@ namespace CepGestao.Controllers
                 .FirstOrDefault(x =>
                     x.User == username &&
                     x.Senha == senha);
-    
+
             if (usuario == null)
             {
                 ViewBag.Erro = "Usuário ou senha inválidos";
