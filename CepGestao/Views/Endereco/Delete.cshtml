@@ -1,1 +1,37 @@
-﻿
+﻿@model CepGestao.Models.Endereco
+
+<h2>Excluir Endereço</h2>
+
+<p>
+    Tem certeza que deseja excluir este endereço?
+</p>
+
+<hr />
+
+<p>
+    <strong>CEP:</strong> @Model.Cep
+</p>
+
+<p>
+    <strong>Logradouro:</strong> @Model.Logradouro
+</p>
+
+<p>
+    <strong>Número:</strong> @Model.Numero
+</p>
+
+<form method="post" action="/Endereco/DeleteConfirmed">
+
+    <input type="hidden" name="id" value="@Model.Id" />
+
+    <button type="submit">
+        Confirmar Exclusão
+    </button>
+
+</form>
+
+<br />
+
+<a href="/Endereco">
+    Voltar
+</a>

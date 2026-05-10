@@ -92,6 +92,23 @@ namespace CepGestao.Controllers
             return View(endereco);
         }
        
+        [HttpPost]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var endereco = _context.Enderecos
+                .FirstOrDefault(x => x.Id == id);
+
+            if (endereco == null)
+            {
+                return NotFound();
+            }
+
+            _context.Enderecos.Remove(endereco);
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
+
     }
 }
