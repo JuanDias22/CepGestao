@@ -4,45 +4,55 @@
 
 <form method="post">
 
-    <input type="hidden" name="Id" value="@Model.Id" />
-    <input type="hidden" name="UsuarioId" value="@Model.UsuarioId" />
+    <input class="form-control" type="hidden" name="Id" value="@Model.Id" />
+    <input class="form-control" type="hidden" name="UsuarioId" value="@Model.UsuarioId" />
 
     <div>
         <label>CEP</label>
-        <input type="text" name="Cep" value="@Model.Cep" />
+        <input class="form-control" type="text" name="Cep" value="@Model.Cep" />
     </div>
 
+    <p> 
     <div>
         <label>Logradouro</label>
-        <input type="text" name="Logradouro" value="@Model.Logradouro" />
+        <input class="form-control" type="text" name="Logradouro" value="@Model.Logradouro" />
     </div>
+    </p>
 
+    <p> 
     <div>
         <label>Complemento</label>
-        <input type="text" name="Complemento" value="@Model.Complemento" />
+        <input class="form-control" type="text" name="Complemento" value="@Model.Complemento" />
     </div>
+    </p>
 
+    <p> 
     <div>
         <label>Bairro</label>
-        <input type="text" name="Bairro" value="@Model.Bairro" />
+        <input class="form-control" type="text" name="Bairro" value="@Model.Bairro" />
     </div>
+    </p>
 
+    <p> 
     <div>
         <label>Cidade</label>
-        <input type="text" name="Cidade" value="@Model.Cidade" />
+        <input class="form-control" type="text" name="Cidade" value="@Model.Cidade" />
     </div>
+    </p>
 
+    <p> 
     <div>
         <label>UF</label>
-        <input type="text" name="Uf" value="@Model.Uf" />
+        <input class="form-control" type="text" name="Uf" value="@Model.Uf" />
     </div>
+    </p>
 
+    <p> 
     <div>
         <label>Número</label>
-        <input type="text" name="Numero" value="@Model.Numero" />
+        <input class="form-control" type="text" name="Numero" value="@Model.Numero" />
     </div>
-
-    <br />
+    </p>  
 
     <button type="submit">
         Salvar Alterações
